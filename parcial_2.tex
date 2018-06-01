@@ -1,0 +1,399 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usepackage{euler}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{mathabx}
+\usetikzlibrary{babel}
+\usepackage{geometry}
+
+\geometry{margin=2cm}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+
+
+\title{T\'ecnicas de simulaci\'on por computadora}
+\author{Grupo O}
+\begin{document}
+\maketitle
+\vspace{3cm}
+Dada la figura y ecuaci\'on diferencial: \\ 
+
+\begin{minipage}{.7\textwidth}
+\begin{tikzpicture}
+%flechas y grid
+\draw (-1.5, 5) -- (6, 5) ;
+\draw (-1.5, -1.5) -- (6, -1.5);
+\draw (-1.5, -1.5) -- (-1.5, 5);
+\draw (6, -1.5) -- (6, 5);
+\draw  [<->, thick] (-1.5, 0) -- (6, 0);
+\draw  [<->, thick] (0, -1.5) -- (0, 5);
+\draw [step = 0.5cm, gray, very thin] (-1.5, -1.5) grid (6, 5);
+%numeracion
+\node [below left] at (0, 0) {0};
+\node [below left] at (1, 0) {1};
+\node [below left] at (2, 0) {2};
+\node [below left] at (3, 0) {3};
+\node [below left] at (4, 0) {4};
+\node [below left] at (5, 0) {5};
+\node [below left] at (0, 0) {0};
+\node [below left] at (0, 1) {1};
+\node [below left] at (0, 2) {2};
+\node [below left] at (0, 3) {3};
+\node [below left] at (0, 4) {4};
+%puntos y x, y
+\node [below left, teal] at (6, 0) {x};
+\node [below left, teal] at (0, 5) {y};
+\draw[fill] (0,0) circle [radius=0.025];
+\draw[fill] (1,0) circle [radius=0.025];
+\draw[fill] (2,0) circle [radius=0.025];
+\draw[fill] (3,0) circle [radius=0.025];
+\draw[fill] (4,0) circle [radius=0.025];
+\draw[fill] (5,0) circle [radius=0.025];
+\draw[fill] (0,1) circle [radius=0.025];
+\draw[fill] (0,2) circle [radius=0.025];
+\draw[fill] (0,3) circle [radius=0.025];
+\draw[fill] (0,4) circle [radius=0.025];
+%figura
+\draw [blue, thick] (1, 1) -- (1, 4);
+\draw [blue, thick] (1, 1) -- (5, 1);
+\draw [blue, thick] (1, 4) -- (2.5, 4);
+\draw [blue, thick] (5, 1) -- (5, 4);
+\draw [blue, thick] (5, 4) -- (3.5, 4);
+\draw [blue, thick] (2.5, 4) -- (2.5, 3);
+\draw [blue, thick] (3.5, 4) -- (3.5, 3);
+\draw [blue, thick] (2.5, 3) -- (2, 3);
+\draw [blue, thick] (3.5, 3) -- (4, 3);
+\draw [blue, thick] (2, 3) -- (2, 2);
+\draw [blue, thick] (4, 3) -- (4, 2);
+\draw [blue, thick] (2, 2) -- (4, 2);
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+$ \nabla(10 \nabla T) = -100 $
+\end{minipage}
+
+\newpage
+
+Mallado de la figura y establecimiento de contornos para condiciones de Dirichlet y Neumann: \\
+
+\begin{minipage}{.8\textwidth}
+
+\begin{tikzpicture}
+%flechas y grid
+\draw (-1.5, 5) -- (6, 5) ;
+\draw (-1.5, -1.5) -- (6, -1.5);
+\draw (-1.5, -1.5) -- (-1.5, 5);
+\draw (6, -1.5) -- (6, 5);
+\draw  [<->, thick] (-1.5, 0) -- (6, 0);
+\draw  [<->, thick] (0, -1.5) -- (0, 5);
+\draw [step = 0.5cm, gray, very thin] (-1.5, -1.5) grid (6, 5);
+%numeracion
+\node [below left] at (0, 0) {0};
+\node [below left] at (1, 0) {1};
+\node [below left] at (2, 0) {2};
+\node [below left] at (3, 0) {3};
+\node [below left] at (4, 0) {4};
+\node [below left] at (5, 0) {5};
+\node [below left] at (0, 0) {0};
+\node [below left] at (0, 1) {1};
+\node [below left] at (0, 2) {2};
+\node [below left] at (0, 3) {3};
+\node [below left] at (0, 4) {4};
+%puntos y x, y
+\node [below left, teal] at (6, 0) {x};
+\node [below left, teal] at (0, 5) {y};
+\draw[fill] (0,0) circle [radius=0.025];
+\draw[fill] (1,0) circle [radius=0.025];
+\draw[fill] (2,0) circle [radius=0.025];
+\draw[fill] (3,0) circle [radius=0.025];
+\draw[fill] (4,0) circle [radius=0.025];
+\draw[fill] (5,0) circle [radius=0.025];
+\draw[fill] (0,1) circle [radius=0.025];
+\draw[fill] (0,2) circle [radius=0.025];
+\draw[fill] (0,3) circle [radius=0.025];
+\draw[fill] (0,4) circle [radius=0.025];
+%figura
+\draw [cyan, thick] (1, 1) -- (1, 4);
+\draw [blue, thick] (1, 1) -- (5, 1);
+\draw [blue, thick] (1, 4) -- (2.5, 4);
+\draw [green, thick] (5, 1) -- (5, 4);
+\draw [blue, thick] (5, 4) -- (3.5, 4);
+\draw [blue, thick] (2.5, 4) -- (2.5, 3);
+\draw [blue, thick] (3.5, 4) -- (3.5, 3);
+\draw [blue, thick] (2.5, 3) -- (2, 3);
+\draw [blue, thick] (3.5, 3) -- (4, 3);
+\draw [blue, thick] (2, 3) -- (2, 2);
+\draw [blue, thick] (4, 3) -- (4, 2);
+\draw [blue, thick] (2, 2) -- (4, 2);
+%lineas de nodos
+\draw [red, thin] (1, 1) -- (2.5, 4);
+\draw [red, thin] (5, 1) -- (3.5, 4);
+\draw [red, thin] (2, 2) -- (2, 1);
+\draw [red, thin] (4, 2) -- (4, 1);
+\draw [red, thin] (2, 2) -- (4, 1);
+%enumerando nodos  \textcircled{1}
+\node [below left] at (1, 1) {\tiny{1}};
+\node [below left] at (2, 1) {\tiny{2}};
+\node [below left] at (4, 1) {\tiny{3}};
+\node [below left] at (5, 1) {\tiny{4}};
+\node [below left] at (5, 4) {\tiny{5}};
+\node [below left] at (3.5, 4) {\tiny{6}};
+\node [below left] at (3.5, 3) {\tiny{7}};
+\node [below left] at (4, 3) {\tiny{8}};
+\node [below left] at (4, 2) {\tiny{9}};
+\node [above right] at (2, 2) {\tiny{10}};
+\node [below left] at (2, 3) {\tiny{11}};
+\node [below right] at (2.5, 3) {\tiny{12}};
+\node [below left] at (2.5, 4) {\tiny{13}};
+\node [below left] at (1, 4) {\tiny{14}};
+%enumerando los nodos
+\node [below left] at (2, 3.5) {\tiny{\textcircled{1}}};
+\node [below left] at (2.5, 3.5) {\tiny{\textcircled{2}}};
+\node [below left] at (2, 2) {\tiny{\textcircled{3}}};
+\node [below left] at (3, 1.5) {\tiny{\textcircled{4}}};
+\node [below left] at (3.5, 2) {\tiny{\textcircled{5}}};
+\node [below left] at (4.5, 2) {\tiny{\textcircled{6}}};
+\node [below left] at (4.5, 3.5) {\tiny{\textcircled{7}}};
+\node [above right] at (3.5, 3) {\tiny{\textcircled{8}}};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.2\textwidth}
+
+\begin{tikzpicture}[
+  greennode/.style={shape=circle, draw=cyan, line width=2},
+  cyannode/.style={shape=circle, draw=green, line width=2}
+]
+%leyenda
+\matrix [draw,right] at (current bounding box.east) {
+  \node [cyannode,label=right:Neumann] {}; \\
+  \node [greennode,label=right:Dirichlet] {}; \\
+};
+\end{tikzpicture}
+
+\end{minipage}
+\\ \\
+
+Tabla de conectividad: \\
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+elemento & 1 & 2 & 3 \\
+\hline 
+\textcircled{1} & 1 & 13 & 14 \\
+\textcircled{2} & 11 & 12 & 13 \\
+\textcircled{3} & 1 & 2 & 11 \\
+\textcircled{4} & 2 & 3 & 10 \\
+\textcircled{5} & 3 & 9 & 10 \\
+\textcircled{6} & 3 & 4 & 8 \\
+\textcircled{7} & 4 & 5 & 6 \\
+\textcircled{8} & 7 & 8 & 6 \\
+\hline
+\end{tabular}
+\\ \\
+
+Condiciones a utilizar: \\
+
+\begin{align*}
+\Gamma^{}_{D} =  \\
+\Gamma^{}_{N} = 
+\end{align*}
+\newpage
+
+Aproximaci\'on en el plano isoparam\'etrico: \\
+
+\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}
+%plano
+%flechas y grid
+\draw (-1, 2) -- (2, 2) ;
+\draw (-1, -1) -- (2, -1);
+\draw (-1, -1) -- (-1, 2);
+\draw (2, -1) -- (2, 2);
+\draw  [<->, thick] (-1, 0) -- (2, 0);
+\draw  [<->, thick] (0, -1) -- (0, 2);
+\draw [step = 0.5cm, gray, very thin] (-1, -1) grid (2, 2);
+%numeracion
+\node [below left] at (0, 0) {0};
+\node [below left] at (1, 0) {1};
+\node [below left] at (0, 1) {1};
+
+%puntos y x, y
+\node [below left, teal] at (0, 2) {$\eta$};
+\node [below left, teal] at (2, 0) {$\epsilon$};
+\draw[fill] (0,0) circle [radius=0.025];
+\draw[fill] (1,0) circle [radius=0.025];
+\draw[fill] (0,1) circle [radius=0.025];
+%linea
+\draw [blue] (0, 1) -- (1, 0);
+%enumerando los nodos
+\node [above right] at (0, 0) {\tiny{1}};
+\node [above right] at (1, 0) {\tiny{2}};
+\node [above right] at (0, 1) {\tiny{3}};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+\begin{align*}
+T & \approx f_1 T_1 + f_2 T_2 + f_3 T_3 \\
+& \approx N_1 T_1 + N_2 T_2 + N_3 T_3 \\ 
+& \approx \begin{bmatrix} N_1 & N_2 & N_3 \end{bmatrix} \begin{bmatrix} T_1 \\ T_2 \\ T_3 \end{bmatrix} \\
+& \approx \doubleunderline{N} \vec{T} \\ \\
+& \text{con } N_1 = 1 - \epsilon - \eta \text{, } N_2 = \epsilon \text{, } N_3 = \eta \\
+& x \approx (x_2 - x_1)\epsilon +(x_3 - x_1)\eta + x_1 \\
+& y \approx (y_2 - y_1)\epsilon +(y_3 - y_1)\eta + y_1 
+\end{align*}
+\end{minipage}\\
+
+Sustituci\'on de la funci\'on por su aproximaci\'on: \\
+\begin{align*}
+& \nabla (10 \nabla T) = -100 \\
+& \nabla (10 \nabla \doubleunderline{N} \vec{T})  \approx -100 \\
+& \nabla (10 \nabla \doubleunderline{N} \vec{T}) + 100  \neq 0 \\
+& \nabla (10 \nabla \doubleunderline{N} \vec{T}) + 100  = \mathscr{R}
+\end{align*}\\
+W.R.M.: \\
+\begin{align*}
+&\int_\Omega \doubleunderline{W} \mathscr{R} \,d \Omega  = 0 \\
+&\int_A \doubleunderline{W} \mathscr{R} \,d A  = 0 \\
+&\int_A \doubleunderline{W} (\nabla (10 \nabla \doubleunderline{N} \vec{T}) + 100) \,d A  = 0 
+\end{align*} \\
+Galerkin: \\
+\begin{align*}
+&\doubleunderline{W}  = \doubleunderline{N}^T \\
+&\int_A \doubleunderline{N}^T (\nabla (10 \nabla \doubleunderline{N} \vec{T}) + 100) \,d A  = 0  \\
+&\int_A \doubleunderline{N}^T (\nabla (10 \nabla \doubleunderline{N} \vec{T})) \,d A + \int_A \doubleunderline{N}^T (100) \,d A  = 0 
+\end{align*}\\
+Integraci\'on por partes: \\
+\begin{align*}
+& \text{sea } U = \doubleunderline{N}^T \text{, } \,d U =\nabla \doubleunderline{N}^T \\
+& \text{sea } \,d V =\nabla (10 \nabla \doubleunderline{N}  \vec{T}) \text{, } V = 10 \nabla (\doubleunderline{N} \vec{T}) \\ \\
+&\int_A \doubleunderline{N}^T (\nabla (10 \nabla \doubleunderline{N} \vec{T})) \,d A = [ \doubleunderline{N}^T 10 \nabla (\doubleunderline{N} \vec{T}) ]_{\Gamma_{N}} - \int_A \nabla \doubleunderline{N}^t 10 \nabla (\doubleunderline{N} \vec{T} ) \,d A
+\end{align*}
+\newpage
+Trabajando en la ecuaci\'on: \\
+\begin{align*}
+ - &\int_A \nabla \doubleunderline{N}^T 10 \nabla (\doubleunderline{N} \vec{T} ) \,d A + \int_A \doubleunderline{N}^T (100) \,d A  = 0 \\
+& \int_A \nabla \doubleunderline{N}^T 10 \nabla (\doubleunderline{N} \vec{T} ) \,d A = \int_A \doubleunderline{N}^T (100) \,d A \\
+ 10 &\int_A \nabla \doubleunderline{N}^T \nabla (\doubleunderline{N} ) \,d A (\vec{T}) = 100 \int_A \doubleunderline{N}^T \,d A
+\end{align*}\\
+Lado derecho: \\
+\begin{align*}
+100 \int_A \doubleunderline{N}^T \,d A &= 100 \int_A \begin{bmatrix} 1-\epsilon-\eta \\ \epsilon \\ \eta \end{bmatrix} \,d A \\
+&= 100 \int_A \begin{bmatrix} 1-\epsilon-\eta \\ \epsilon \\ \eta \end{bmatrix} \,d x \,d y
+\end{align*} \\
+Llevando la integral al plano isoparam\'etrico con un jacobiano: \\
+\begin{align*}
+\,d x \,d y &= D \,d \epsilon \,d \eta \\
+J &= \begin{bmatrix}
+\frac{\delta x}{ \delta \epsilon} & \frac{\delta x}{\delta \eta} \\
+\frac{\delta y}{ \delta \epsilon} & \frac{\delta y}{\delta \eta} 
+\end{bmatrix} \\
+&= \begin{bmatrix}
+(x_2 - x_1) & (x_3 - x_1) \\
+(y_2 - y_1) & (y_3 - y_1) \\
+\end{bmatrix} \\
+D &= |J| \\
+&= (x_2 - x_1)(y_3 - y_1) - (x_3 - x_1)(y_2 - y_1)
+\end{align*}\\
+Sustituyendo en la integral:\\
+\begin{align*}
+100 \int_A \begin{bmatrix} 1-\epsilon-\eta \\ \epsilon \\ \eta \end{bmatrix} \,d A &= 100 \int_{0}^{1} \int_{0}^{1} \begin{bmatrix} 1-\epsilon-\eta \\ \epsilon \\ \eta \end{bmatrix} \begin{vmatrix} (x_2-x_1) & (x_3-x_1) \\ 
+(y_2-y_1) & (y_3-y_1) \end{vmatrix} \,d \epsilon \,d \eta \\
+&= 100 \begin{vmatrix} (x_2-x_1) & (x_3-x_1) \\ 
+(y_2-y_1) & (y_3-y_1) \end{vmatrix} \int_{0}^{1} \int_{0}^{1} \begin{bmatrix} 1-\epsilon-\eta \\ \epsilon \\ \eta \end{bmatrix} \,d \epsilon \,d \eta \\
+&= 100 \begin{vmatrix} (x_2-x_1) & (x_3-x_1) \\ 
+(y_2-y_1) & (y_3-y_1) \end{vmatrix} \begin{bmatrix} \int_{0}^{1} \int_{0}^{1} (1-\epsilon-\eta) \,d \epsilon \,d \eta \\ \\ \int_{0}^{1} \int_{0}^{1} \epsilon \,d \epsilon \,d \eta  \\ \\ \int_{0}^{1} \int_{0}^{1} \eta \,d \epsilon \,d \eta  \end{bmatrix} \\
+& = 100 \begin{vmatrix} (x_2-x_1) & (x_3-x_1) \\ 
+(y_2-y_1) & (y_3-y_1) \end{vmatrix} \begin{bmatrix} 
+0 \\ 1/2 \\ 1/2
+\end{bmatrix}
+\end{align*} 
+\newpage
+Trabajando lado izquierdo de la ecuaci\'on: \\
+\begin{align*}
+10 \int_A \nabla \doubleunderline{N}^T \nabla (\doubleunderline{N} ) \,d A (\vec{T}) &= 10 \int_{c}^{d} \int_{a}^{b} \nabla \doubleunderline{N}^T \nabla (\doubleunderline{N} ) \,d x \,d y (\vec{T}) \\
+\text{con } \nabla_{x} \doubleunderline{N} & = (\nabla_{\epsilon} \doubleunderline{x})^{-1} \nabla_{\epsilon} \doubleunderline{N} \\
+&= \begin{bmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+-1 & 1 & 1 \\
+-1 & 0 & 1
+\end{bmatrix} \\
+& = \frac{1}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}} \begin{bmatrix}
+(y_3-y_1) & (y_1-y_2) \\
+(x_1-x_3) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+-1 & 1 & 1 \\
+-1 & 0 & 1
+\end{bmatrix} \\
+&=\frac{1}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}} \begin{bmatrix}
+(y_2 - y_3) & (y_3-y_1) & (y_1-y_2) \\
+(x_3 - x_2) & (x_1-x_3) & (x_2-x_1)
+\end{bmatrix} \\
+\nabla \doubleunderline{N}^T &=\frac{1}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}} \begin{bmatrix}
+(y_2 - y_3) & (x_3 - x_2)\\
+ (y_3-y_1) & (x_1-x_3) \\
+ (y_1-y_2) & (x_2-x_1)
+\end{bmatrix}
+\end{align*}\\
+Sustituyendo en la integral: \\
+\begin{align*}
+&= 10 \int_{c}^{d} \int_{a}^{b} 
+\frac{1}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}^2} \begin{bmatrix}
+(y_2 - y_3) & (x_3 - x_2)\\
+ (y_3-y_1) & (x_1-x_3) \\
+ (y_1-y_2) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+(y_2 - y_3) & (y_3-y_1) & (y_1-y_2) \\
+(x_3 - x_2) & (x_1-x_3) & (x_2-x_1)
+\end{bmatrix}
+ \,d x \,d y (\vec{T}) \\
+&= 10 \frac{(x\Big|_a^b)(y\Big|_c^d)}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}^2} \begin{bmatrix}
+(y_2 - y_3) & (x_3 - x_2)\\
+ (y_3-y_1) & (x_1-x_3) \\
+ (y_1-y_2) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+(y_2 - y_3) & (y_3-y_1) & (y_1-y_2) \\
+(x_3 - x_2) & (x_1-x_3) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix}
+\end{align*}\\
+Sistema local final: \\
+\begin{align*}\small{
+\frac{10(x\Big|_a^b)(y\Big|_c^d)}{\begin{vmatrix}
+(x_2-x_1) & (y_2-y_1) \\
+(x_3-x_1) & (y_3-y_1)
+\end{vmatrix}^2} \begin{bmatrix}
+(y_2 - y_3) & (x_3 - x_2)\\
+ (y_3-y_1) & (x_1-x_3) \\
+ (y_1-y_2) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+(y_2 - y_3) & (y_3-y_1) & (y_1-y_2) \\
+(x_3 - x_2) & (x_1-x_3) & (x_2-x_1)
+\end{bmatrix} \begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 \begin{vmatrix} (x_2-x_1) & (x_3-x_1) \\ 
+(y_2-y_1) & (y_3-y_1) \end{vmatrix} \begin{bmatrix} 
+0 \\ 1/2 \\ 1/2
+\end{bmatrix}}
+\end{align*}
+\end{document}
