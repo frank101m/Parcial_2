@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1528057309 "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" "parcial_2.pdf" "parcial_2" 1528057313
+["pdflatex"] 1528058392 "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" "parcial_2.pdf" "parcial_2" 1528058395
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc" 1458473887 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplr7t.tfm" 1136793854 1804 7b5f73028f6509167f47ace9d69509ed ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136793854 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -158,9 +158,7 @@
   "C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/ot1zplm.fd" 1137135830 436 5e7baa1a259bab50a2bdffad6426f38c ""
   "C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty" 1463135581 57049 74963e80d77be39a0b7442967b27c75b ""
   "C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map" 1528052124 98598 5168e858b4c7d99bb17a48b3c6d0d21e ""
-  "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi300/mathx10.pk" 1528052146 15552 1aa6e0fcbc02019a3b572cf42dcb1671 ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi600/matha10.pk" 1528052153 24548 c61e7253e9e935960be2397024d30ec8 ""
-  "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi600/matha5.pk" 1528052148 14948 e5b089275c6c3d366ad9c94ab3fca569 ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk" 1528052150 20784 888e1d17bfe868df296889a2efbee3bd ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi600/matha9.pk" 1528052149 22880 b002722190593bb44e8b45f16c7da838 ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/public/mathabx/dpi600/mathx10.pk" 1528052152 30944 d44c53c21beecc7d959a794e0047d638 ""
@@ -180,10 +178,10 @@
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/tfm/public/mathabx/mathb9.tfm" 1528052131 1384 6f79ef439a7631812c0d17f30d628c4b ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/tfm/public/mathabx/mathx10.tfm" 1528052133 1520 88530e4e46ef1e4a7103f014512c50d2 ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1499040113 4001363 f9116496579b7ca33c827cdb7485f1c9 ""
-  "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" 1528057307 30116 6ac6054fbe48fe6ebd0134c6b6cbff5f ""
-  "parcial_2.aux" 1528057312 257 ef6a7c3064bdd1332d8e81552465f31e ""
-  "parcial_2.tex" 1528057307 30116 6ac6054fbe48fe6ebd0134c6b6cbff5f ""
+  "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" 1528058391 30266 9e642feeab6e4c53b5d28882843e3352 ""
+  "parcial_2.aux" 1528058395 257 ef6a7c3064bdd1332d8e81552465f31e ""
+  "parcial_2.tex" 1528058391 30266 9e642feeab6e4c53b5d28882843e3352 ""
   (generated)
-  "parcial_2.pdf"
-  "parcial_2.log"
   "parcial_2.aux"
+  "parcial_2.log"
+  "parcial_2.pdf"

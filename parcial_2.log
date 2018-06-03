@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.7.2)  3 JUN 2018 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.7.2)  3 JUN 2018 14:39
 entering extended mode
 **c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex
 (c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex
@@ -1441,39 +1441,57 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 887.
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 887.
 
-[8] [9
+[8]
+Overfull \hbox (101.10948pt too wide) in paragraph at lines 904--904
+[] 
+ []
 
-] (parcial_2.aux
+
+Overfull \hbox (37.87785pt too wide) in paragraph at lines 904--905
+[][] 
+ []
+
+[9
+
+]
+Overfull \hbox (217.55252pt too wide) in paragraph at lines 916--916
+[] 
+ []
+
+
+Overfull \hbox (37.81296pt too wide) in paragraph at lines 911--917
+[] 
+ []
+
+[10] (parcial_2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 14325 strings out of 493328
- 269950 string characters out of 3139122
- 361509 words of memory out of 3000000
+ 14320 strings out of 493328
+ 269921 string characters out of 3139122
+ 375774 words of memory out of 3000000
  17502 multiletter control sequences out of 15000+200000
- 48885 words of font info for 146 fonts, out of 3000000 for 9000
+ 47059 words of font info for 141 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,17n,54p,2296b,901s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,18n,54p,2296b,901s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dp
-i600\matha5.pk> <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publi
-c\mathabx\dpi300\mathx10.pk> <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\public\mathabx\dpi600\matha9.pk> <C:\Users\Laptop\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\public\mathabx\dpi600\matha8.pk> <C:\Users\Laptop\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi600\mathx10.pk>{C:/Program Fi
-les/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Laptop\AppData\Local\MiKT
-eX\2.9\fonts\pk\ljfour\public\mathabx\dpi600\matha10.pk><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/euler/eusm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/mathpazo/fplm
-r.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on parcial_2.pdf (9 pages, 116435 bytes).
+i600\matha9.pk> <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publi
+c\mathabx\dpi600\matha8.pk> <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\public\mathabx\dpi600\mathx10.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/
+dvips/base/8r.enc} <C:\Users\Laptop\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\mathabx\dpi600\matha10.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
+/palatino/uplri8a.pfb>
+Output written on parcial_2.pdf (10 pages, 115014 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
