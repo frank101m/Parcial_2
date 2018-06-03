@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.7)  1 JUN 2018 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.7)  2 JUN 2018 22:00
 entering extended mode
 **./parcial_2.tex
 (parcial_2.tex
@@ -1165,15 +1165,246 @@ Overfull \hbox (12.68462pt too wide) detected at line 398
 []
  []
 
-[5] (parcial_2.aux
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+ []
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 402--423
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--423
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 447.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 447.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 461.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 461.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 462--483
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--483
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 507.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 507.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 521.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 521.
+
+[6]
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 523--544
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--544
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 568.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 568.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 582.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 582.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
+
+ []
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 583--604
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--604
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 628.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 628.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--629
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 642.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 642.
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 643--664
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--664
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 688.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 688.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 702.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 702.
+
+[7]
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 704--725
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--725
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 749.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 749.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 763.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 763.
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 764--785
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--785
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 809.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 809.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--810
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 823.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 823.
+
+
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 824--845
+[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--845
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 869.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 869.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 883.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 883.
+
+[8] (parcial_2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 14170 strings out of 493312
- 268235 string characters out of 3138900
- 321797 words of memory out of 3000000
- 17394 multiletter control sequences out of 15000+200000
+ 14174 strings out of 493312
+ 268276 string characters out of 3138900
+ 324797 words of memory out of 3000000
+ 17398 multiletter control sequences out of 15000+200000
  25434 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,17n,54p,411b,901s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1193,9 +1424,9 @@ TeX 2.9/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/euler/eurm5.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/euler/eurm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/euler/eusm10.pfb>
-Output written on parcial_2.pdf (5 pages, 126464 bytes).
+Output written on parcial_2.pdf (8 pages, 134760 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

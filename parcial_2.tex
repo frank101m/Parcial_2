@@ -149,8 +149,8 @@ Mallado de la figura y establecimiento de contornos para condiciones de Dirichle
 \node [below left] at (2.5, 4) {\tiny{13}};
 \node [below left] at (1, 4) {\tiny{14}};
 %enumerando los nodos
-\node [below left] at (2, 3.5) {\tiny{\textcircled{1}}};
-\node [below left] at (2.5, 3.5) {\tiny{\textcircled{2}}};
+\node [below left] at (2, 3.5) {\tiny{\textcircled{2}}};
+\node [below left] at (2.5, 3.5) {\tiny{\textcircled{1}}};
 \node [below left] at (2, 2) {\tiny{\textcircled{3}}};
 \node [below left] at (3, 1.5) {\tiny{\textcircled{4}}};
 \node [below left] at (3.5, 2) {\tiny{\textcircled{5}}};
@@ -181,14 +181,14 @@ Tabla de conectividad: \\
 \hline
 elemento & 1 & 2 & 3 \\
 \hline 
-\textcircled{1} & 1 & 13 & 14 \\
-\textcircled{2} & 11 & 12 & 13 \\
+\textcircled{1} & 11 & 12 & 13 \\
+\textcircled{2} & 1 & 13 & 14 \\
 \textcircled{3} & 1 & 2 & 11 \\
 \textcircled{4} & 2 & 3 & 10 \\
-\textcircled{5} & 3 & 9 & 10 \\
+\textcircled{5} & 10 & 3 & 9 \\
 \textcircled{6} & 3 & 4 & 8 \\
-\textcircled{7} & 4 & 5 & 6 \\
-\textcircled{8} & 7 & 8 & 6 \\
+\textcircled{7} & 6 & 4 & 5 \\
+\textcircled{8} & 6 & 7 & 8 \\
 \hline
 \end{tabular}
 \\ \\
@@ -319,7 +319,7 @@ Trabajando lado izquierdo de la ecuaci\'on: \\
 (x_3-x_1) & (y_3-y_1)
 \end{bmatrix}^{-1}
 \begin{bmatrix}
--1 & 1 & 1 \\
+-1 & 1 & 0 \\
 -1 & 0 & 1
 \end{bmatrix} \\
 & = \frac{1}{\begin{vmatrix}
@@ -329,7 +329,7 @@ Trabajando lado izquierdo de la ecuaci\'on: \\
 (y_3-y_1) & (y_1-y_2) \\
 (x_1-x_3) & (x_2-x_1)
 \end{bmatrix} \begin{bmatrix}
--1 & 1 & 1 \\
+-1 & 1 & 0 \\
 -1 & 0 & 1
 \end{bmatrix} \\
 &=\frac{1}{\begin{vmatrix}
@@ -396,4 +396,490 @@ T_1 \\ T_2 \\ T_3
 0 \\ 1/2 \\ 1/2
 \end{bmatrix}}
 \end{align*}
+\newpage
+Calculando elementos: \\
+\begin{enumerate}
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 0) -- (2, 0);
+\draw (2, 0) -- (2, 2);
+\draw (2, 2) -- (0, 0);
+%enumerando los nodos
+\node [below left] at (0, 0) {(2, 3)};
+\node [below right] at (2, 0) {(2.5, 3)};
+\node [above right] at (2, 2) {(2.5, 4)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 2$ & $y_1 = 3$ & $a = 2 $\\
+$x_2 = 2.5 $& $y_2 = 3$ & $b = 2.5 $\\
+$x_3 = 2.5$ & $y_3 = 4$ & $c = 3 $ \\
+ & & $d = 4$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(0.5)(1)}
+{\begin{vmatrix}
+0.5 & 0 \\
+0.5 & 1
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-1 & 0\\
+ 1 & -0.5 \\
+ 0 & 0.5
+\end{bmatrix} 
+\begin{bmatrix}
+-1 & 1 & 0 \\
+0 & -0.5 & 0.5
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 0.5 & 0.5 \\ 
+0 & 1 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 1/2 \\ 1/2
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+20 & -20 & 0\\
+-20 & 25 & -5 \\
+0 & -5 & 5
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 25 \\ 25
+\end{bmatrix}}
+\end{align*}\\
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 2) -- (0, 0);
+\draw (0, 0) -- (2, 2);
+\draw (2, 2) -- (0, 2);
+%enumerando los nodos
+\node [below left] at (0, 0) {(1, 1)};
+\node [above left] at (0, 2) {(1, 4)};
+\node [above right] at (2, 2) {(2.5, 4)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 1$ & $y_1 = 1$ & $a = 1 $\\
+$x_2 = 2.5 $& $y_2 = 4$ & $b = 2.5 $\\
+$x_3 = 1$ & $y_3 = 4$ & $c = 1 $ \\
+ & & $d = 4$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(1.5)(3)}
+{\begin{vmatrix}
+1.5 & 3 \\
+0 & 3
+\end{vmatrix}^2} 
+\begin{bmatrix}
+0 & -1.5\\
+ 3 & 0 \\
+ -3 & 1.5
+\end{bmatrix} 
+\begin{bmatrix}
+0 & 3 & -3 \\
+-1.5 & 0 & 1.5
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 1.5 & 0 \\ 
+3 & 3 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 1/2 \\ 1/2
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+5 & 0 & -5\\
+0 & 20 & -20 \\
+-5 & -20 & 25
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 255 \\ 255
+\end{bmatrix}}
+\end{align*}
+\newpage
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 0) -- (2, 0);
+\draw (2, 0) -- (2, 2);
+\draw (2, 2) -- (0, 0);
+%enumerando los nodos
+\node [below left] at (0, 0) {(1, 1)};
+\node [below right] at (2, 0) {(2, 1)};
+\node [above right] at (2, 2) {(2, 3)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 1$ & $y_1 = 1$ & $a = 1 $\\
+$x_2 = 2 $& $y_2 = 1$ & $b = 2 $\\
+$x_3 = 2$ & $y_3 = 3$ & $c = 1 $ \\
+ & & $d = 3$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(1)(2)}
+{\begin{vmatrix}
+1 & 0 \\
+1 & 2
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-2 & 0\\
+ 2 & -1 \\
+ 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+-2 & 2 & 0 \\
+0 & -1 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 1 & 1 \\ 
+0 & 2 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+20 & -20 & 0\\
+-20 & 25 & -5 \\
+0 & -5 & 5
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 100 \\ 100
+\end{bmatrix}}
+\end{align*} \\
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 0) -- (2, 0);
+\draw (0, 0) -- (0, 2);
+\draw (0, 2) -- (2, 0);
+%enumerando los nodos
+\node [below left] at (0, 0) {(2, 1)};
+\node [below right] at (2, 0) {(4, 1)};
+\node [above right] at (0, 2) {(2, 2)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 2$ & $y_1 = 1$ & $a = 2 $\\
+$x_2 = 3 $& $y_2 = 1$ & $b = 4 $\\
+$x_3 = 2$ & $y_3 = 2$ & $c = 1 $ \\
+ & & $d = 2$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(2)(1)}
+{\begin{vmatrix}
+2 & 0 \\
+0 & 1
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-1 & -2\\
+ 1 & 0 \\
+ 0 & 2
+\end{bmatrix} 
+\begin{bmatrix}
+-1 & 1 & 0 \\
+-2 & 0 & 2
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 2 & 0 \\ 
+0 & 1 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+25 & -5 & -20\\
+-5 & 5 & 0 \\
+-20 & 0 & 20
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 100 \\ 100
+\end{bmatrix}}
+\end{align*}
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 2) -- (2, 0);
+\draw (2, 0) -- (2, 2);
+\draw (2, 2) -- (0, 2);
+%enumerando los nodos
+\node [below left] at (0, 2) {(2, 2)};
+\node [below right] at (2, 0) {(4, 1)};
+\node [above right] at (2, 2) {(4, 2)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 2$ & $y_1 = 2$ & $a = 2 $\\
+$x_2 = 4 $& $y_2 = 1$ & $b = 4 $\\
+$x_3 = 4$ & $y_3 = 2$ & $c = 1 $ \\
+ & & $d = 2$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(2)(1)}
+{\begin{vmatrix}
+2 & -1 \\
+2 & 0
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-1 & 0\\
+ 0 & -2 \\
+ 1 & 2
+\end{bmatrix} 
+\begin{bmatrix}
+-1 & 0 & 1 \\
+0 & -2 & 2
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 2 & 2 \\ 
+-1 & 0 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+5 & 0 & -5\\
+0 & 20 & -20 \\
+-5 & -20 & 25
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 100 \\ 100
+\end{bmatrix}}
+\end{align*}
+\newpage
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 0) -- (2, 0);
+\draw (0, 0) -- (0, 2);
+\draw (0, 2) -- (2, 0);
+%enumerando los nodos
+\node [below left] at (0, 0) {(4, 1)};
+\node [below right] at (2, 0) {(5, 1)};
+\node [above right] at (0, 2) {(4, 3)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 4$ & $y_1 = 1$ & $a = 4 $\\
+$x_2 = 5 $& $y_2 = 1$ & $b = 5 $\\
+$x_3 = 4$ & $y_3 = 3$ & $c = 1 $ \\
+ & & $d = 3$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(1)(2)}
+{\begin{vmatrix}
+1 & 0 \\
+0 & 2
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-2 & 1\\
+ 2 & 0 \\
+ 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+-2 & 2 & 0 \\
+-1 & 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 1 & 0 \\ 
+0 & 2 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+25 & -20 & -5\\
+-20 & 20 & 0 \\
+-5 & 0 & 5
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 100 \\ 100
+\end{bmatrix}}
+\end{align*}
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 2) -- (2, 0);
+\draw (2, 0) -- (2, 2);
+\draw (2, 2) -- (0, 2);
+%enumerando los nodos
+\node [below left] at (0, 2) {(3.5, 4)};
+\node [below right] at (2, 0) {(5, 1)};
+\node [above right] at (2, 2) {(5, 4)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 3.5$ & $y_1 = 4$ & $a = 3.5 $\\
+$x_2 = 5 $& $y_2 = 1$ & $b = 5 $\\
+$x_3 = 5$ & $y_3 = 4$ & $c = 1 $ \\
+ & & $d = 4$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(1.5)(3)}
+{\begin{vmatrix}
+1.5 & -3 \\
+1.5 & 0
+\end{vmatrix}^2} 
+\begin{bmatrix}
+-3 & 0\\
+ 0 & -1.5 \\
+ -3 & 1.5
+\end{bmatrix} 
+\begin{bmatrix}
+-3 & 0 & 3 \\
+0 & -1.5 & 1.5
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 1.5 & 1.5 \\ 
+-3 & 0 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+20 & 0 & -20\\
+0 & 5 & -5 \\
+-20 & -5 & 25
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 225 \\ 225
+\end{bmatrix}}
+\end{align*}
+\item\mbox{}\\
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+%figura
+\draw (0, 0) -- (2, 0);
+\draw (0, 0) -- (0, 2);
+\draw (0, 2) -- (2, 0);
+%enumerando los nodos
+\node [below left] at (0, 0) {(3.5, 3)};
+\node [below right] at (2, 0) {(3.5, 4)};
+\node [above right] at (0, 2) {(4, 3)};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{ccc}
+$x_1 = 3.5$ & $y_1 = 4$ & $a = 3.5 $\\
+$x_2 = 3.5 $& $y_2 = 3$ & $b = 4 $\\
+$x_3 = 4$ & $y_3 = 3$ & $c = 3 $ \\
+ & & $d = 4$
+\end{tabular}
+\end{minipage} \\
+\begin{align*}
+\small{
+\frac{10(0.5)(1)}
+{\begin{vmatrix}
+0 & -1 \\
+0.5 & -1
+\end{vmatrix}^2} 
+\begin{bmatrix}
+0 & 0.5\\
+ -1 & -0.5 \\
+ 1 & 0
+\end{bmatrix} 
+\begin{bmatrix}
+0 & -1 & 1 \\
+0-5 & -0.5 & 0
+\end{bmatrix} 
+\begin{bmatrix}
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} = 100 
+\begin{vmatrix} 0 & 0.5 \\ 
+-1 & -1 \end{vmatrix} 
+\begin{bmatrix} 
+0 \\ 0.5 \\ 0.5
+\end{bmatrix}}
+\end{align*}\\
+\begin{align*}
+\small{
+\begin{bmatrix}
+5 & -5 & 0\\
+-5 & 25 & 20 \\
+0 & -20 & 20
+\end{bmatrix}
+\begin{bmatrix} 
+T_1 \\ T_2 \\ T_3
+\end{bmatrix} =  
+\begin{bmatrix} 
+0 \\ 25 \\ 25
+\end{bmatrix}}
+\end{align*}
+\end{enumerate}
 \end{document}
