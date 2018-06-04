@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1528060978 "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" "parcial_2.pdf" "parcial_2" 1528060982
+["pdflatex"] 1528077037 "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" "parcial_2.pdf" "parcial_2" 1528077042
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc" 1458473887 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplr7t.tfm" 1136793854 1804 7b5f73028f6509167f47ace9d69509ed ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136793854 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -178,10 +178,10 @@
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/tfm/public/mathabx/mathb9.tfm" 1528052131 1384 6f79ef439a7631812c0d17f30d628c4b ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/fonts/tfm/public/mathabx/mathx10.tfm" 1528052133 1520 88530e4e46ef1e4a7103f014512c50d2 ""
   "C:/Users/Laptop/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1499040113 4001363 f9116496579b7ca33c827cdb7485f1c9 ""
-  "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" 1528060977 30130 d7a442d4ff20494aa9ea37ba72b15add ""
-  "parcial_2.aux" 1528060982 257 ef6a7c3064bdd1332d8e81552465f31e ""
-  "parcial_2.tex" 1528060977 30130 d7a442d4ff20494aa9ea37ba72b15add ""
+  "c:/Users/Laptop/Source/Repos/Parcial_2/parcial_2.tex" 1528077036 32735 c9ce01c81ec9855f61d54e5eb462a59b ""
+  "parcial_2.aux" 1528077042 257 ef6a7c3064bdd1332d8e81552465f31e ""
+  "parcial_2.tex" 1528077036 32735 c9ce01c81ec9855f61d54e5eb462a59b ""
   (generated)
-  "parcial_2.pdf"
   "parcial_2.aux"
   "parcial_2.log"
+  "parcial_2.pdf"
