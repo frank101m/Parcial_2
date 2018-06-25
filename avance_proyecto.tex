@@ -1,12 +1,12 @@
 \documentclass[12pt]{article}
-\usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[spanish]{babel}
 \usepackage{mathabx}
-\usetikzlibrary{babel}
 \usepackage{geometry}
 \usepackage{pdflscape}
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
 
 \setcounter{MaxMatrixCols}{20}
 
@@ -42,6 +42,19 @@ Nos basamos en la aproximaci\'on escalar, la cual otorgada una interpolaci\'on l
 para los valores dentro del elemento que no eran parte de los v\'ertices. En este caso, al ser una
 variable vectorial, nos vemos en la necesidad de realizar la aproximaci\'on separando las tres componentes
 del vector tridimensional.
+
+\begin{figure}
+	\begin{subfigure}{.5\textwidth}
+	  \centering
+	  \includegraphics[width=.8\linewidth]{f1.png}
+	  \caption{coordenadas isoparam\'etricas}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+	  \centering
+	  \includegraphics[width=.8\linewidth]{f2.png}
+	  \caption{coordenadas cartesianas}
+	\end{subfigure}
+\end{figure}
 \begin{align*}
 \vv &\approx \begin{bmatrix} N_1 & N_2 & N_3 & N_4 \end{bmatrix} \begin{bmatrix} \vv_1 \\ \vv_2 \\ \vv_3 \\ \vv_4 \end{bmatrix} = N_1 \vv_1 + N_2 \vv_2 + N_3 \vv_3 + N_4 \vv_4 \\ \\
 v^{x} &\approx N_1v^{x}_{1} +  N_2v^{x}_{2} +  N_3v^{x}_{3} +  N_4v^{x}_{4} \\
@@ -84,17 +97,10 @@ N_4 &= \zeta \\
 	0 & 1 - \epsilon - \eta - \zeta & 0 & 0 &  \epsilon & 0 & 0 &  \eta & 0 & 0 &  \zeta & 0 \\
 	0 & 0 & 1 - \epsilon - \eta - \zeta & 0 & 0 &  \epsilon & 0 & 0 &  \eta & 0 & 0 &  \zeta
 \end{bmatrix}
-\\
-\nb^{T} &=
-\begin{bmatrix}
-	1 - \epsilon - \eta - \zeta & 0 & 0 &  \epsilon & 0 & 0 &  \eta & 0 & 0 &  \zeta & 0 & 0 \\
-	0 & 1 - \epsilon - \eta - \zeta & 0 & 0 &  \epsilon & 0 & 0 &  \eta & 0 & 0 &  \zeta & 0 \\
-	0 & 0 & 1 - \epsilon - \eta - \zeta & 0 & 0 &  \epsilon & 0 & 0 &  \eta & 0 & 0 &  \zeta
-\end{bmatrix}
 \end{align*}
 
 En el caso de la presi\'on $P$, para lograr consistencia con la dimensi\'on del resto de matrices
-ser\'a tratado como un `vector'.
+ser\'a tratado como un `vector'. Se asignar\'a un promedio de las 3 coordenadas al finalizar los c\'alculos.
 \begin{align*}
 	\vP &\approx  N_1 \vP_1 + N_2 \vP_2 + N_3 \vP_3 + N_4 \vP_4 \\
 	\vP &\approx \nb \Pb \\
@@ -123,7 +129,7 @@ ser\'a tratado como un `vector'.
 \diffp[z]{\epsilon} & \diffp[z]{\eta} & \diffp[z]{\zeta}
 \end{bmatrix}
 \\
-& \approx
+&=
 \begin{bmatrix}
 	x_3 - x_1 & x_4 - x_1 & x_2 - x_1 \\
 	y_3 - y_1 & y_4 - y_1 & y_2 - y_1 \\
@@ -167,12 +173,23 @@ ser\'a tratado como un `vector'.
 \end{bmatrix}
 \end{align*}
 
-\subsection{Discretizaci\'on de las ecuaciones de Navier-Stokes}
-
+\subsection{Aplicaci\'on del m\'etodo de los elementos finitos}
+Antes de aplicar el m\'etodo de elementos finitos a las ecuaciones de Navier-Stokes, tendremos en cuenta las siguientes
+simplificaciones:
+\begin{enumerate}
+	\item El t\'ermino de viscosidad $\nu$ y la densidad $\rho$ se mantienen constantes en nuestro modelo.
+	\item Por simplicidad, se ignorar\'a el t\'ermino temporal para luego volver a introducirlo en los sistemas de ecuaciones finales.
+\end{enumerate}
 \begin{align*}
 	\diffp[\vv]{t} + \vv \cdot \nabla (\vv) + \frac{1}{\rho} \nabla P - \nu \nabla \nabla \vv - \vf &= 0 \\
 	\diffp[\rho]{t} + \rho \nabla \vv &= 0
 \end{align*}
+
+Al aplicar el m\'etodo de los residuos ponderados, tendremos dos funciones de peso, $\mt{W_1}$ para la primera ecuaci\'on,
+$\mt{W_2}$ para la segunda y sus residuales respectivos $\mathcal{R}_1$ y $\mathcal{R}_2$.
+Para simplificar c\'alculos, aplicaremos el m\'etodo de Galerkin, el cual permite el uso
+de la matriz transpuesta de funciones de forma como funciones de peso, en nuestro caso $\nb^{T}$. La \textit{forma fuerte}
+de nuestra aproximaci\'on de elementos finitos se presenta acontinuaci\'on
 \begin{align*}
 	\vv \cdot \nabla (\nb \vb) + \frac{1}{\rho} \nabla \nb \Pb - \nu \nabla \nabla (\nb \vb)  -\vf &= \mathcal{R}_1 \\
 	\rho \nabla (\nb \vb) &= \mathcal{R}_2 \\
@@ -190,6 +207,9 @@ ser\'a tratado como un `vector'.
 	\int_{V} \nb^{T} \left[ \vv \cdot \nabla (\nb \vb) + \frac{1}{\rho} \nabla \nb \Pb - \nu \nabla \nabla (\nb \vb) - \vf + \nabla (\nb \vb) \right] \d{V} &= 0
 \end{align*}
 
+Extraemos las constantes mencionadas en las simplificaciones a tomar en cuenta y definimos la convenci\'on de signo de nuestro
+sistema de ecuaciones.
+
 \begin{align*}
 	\int_{V} \nb \left[ \vv \cdot \nabla (\nb \vb) + \frac{1}{\rho} \nabla \nb \Pb - \nu \nabla \nabla (\nb \vb) - \vf + \nabla (\nb \vb) \right] \d{V} &= 0 \\
 	\int_{V} \nb^{T} \vv \cdot \nabla (\nb \vb) \d{V} +  \int_{V} \nb^{T} \frac{1}{\rho} \nabla \nb \Pb \d{V} - \int_{V} \nb^{T} \nu \nabla \nabla (\nb \vb) \d{V} - \int_{V} \nb^{T} \vf \d{V} + \int_{V} \nb^{T} \nabla (\nb \vb) \d{V} &= 0 \\
@@ -202,15 +222,14 @@ ser\'a tratado como un `vector'.
 \newcommand{\D}{\nu \int_{V} \nb^{T}\nabla \nabla \nb  \d{V} \vb}
 \newcommand{\E}{\int_{V} \nb^{T} \nabla \cdot \nb  \d{V} \vb}
 
-Cambio en la convenci\'on del signo y agregaci\'on del t\'ermino temporal faltante.
+Las siguientes ecuaciones representan la \textit{forma fuerte} nuestro sistema, n\'otese la inclusi\'on
+de la derivada temporal de la velocidad.
 \\
 \scalebox{0.95}{\parbox{\linewidth}{%
 \begin{align*}
 \A - \diffp[\vb]{t} - \B - \C + \D - \E = 0
 \end{align*}
 }}
-\\
-Sistema final:
 \[
 	\mt{A} \vf - \diffp[\vb]{t} -\mt{B} \vb - \mt{C} \Pb + \mt{D} \vb - \mt{E} \vb = 0
 \]
