@@ -1,25 +1,25 @@
-BeginZE C:\Users\Laptop\Source\Repos\Parcial_2\objeto.gid\objeto.vv
-   x -7.895378589630127 12.766457557678223
-   y 8.1892795562744141 -1.5973110198974609
-   z -10.620500564575195 4.9538345336914062
-   e 3.2015621662139893
-   v -0.54855008677864436 -0.098467454052191275 -0.25160019749321644
-   r -0.7912612106055722
-   m 0.85400301218032837 -0.29013428092002869 0.43185758590698242 0 0.50619161128997803 0.2715802788734436 -0.81854397058486938 0 0.12020366638898849 0.91764169931411743 0.37879392504692078 0 0 0 0 1
-   c 3 2 2.8333332538604736
+BeginZE /home/rafa/src/Parcial_2/objeto.gid/objeto.vv
+   x -2.11557626724243164 8.11557579040527344
+   y 5.20156192779541016 -1.20156216621398926
+   z -12.1046867370605469 7.10468673706054688
+   e 3.20156216621398926
+   v 0.592976571028006827 -0.0197811922884590895 0.147223587894583979
+   r 0.791399230457407454
+   m 0.95586782693862915 -0.256484836339950562 0.14329063892364502 0 0.209565699100494385 0.25340801477432251 -0.944386899471282959 0 0.20590992271900177 0.932737886905670166 0.295974969863891602 0 0 0 0 1
+   c 3 2 2.5
    pd 0
    pno 0
    pfo 0
    pf 4
    pv 0
    NowUse 0
-   DrawingType 0
+   DrawingType 1
    LightVector 90 90 150 0
    OGLShadow(UseShadows) 0
    OGLShadow(RenderMode) RenderNice
    OGLShadow(ShadowBias) -0.002
    OGLShadow(AmbientShadows) 1
-   OGLShadow(UseFBO) 1
+   OGLShadow(UseFBO) 0
    OGLShadow(FBOSize) 2048
    OGLShadow(DimmedLightFactor) 0.02
    OGLStereo(UseStereo) 0
@@ -29,7 +29,7 @@ BeginZE C:\Users\Laptop\Source\Repos\Parcial_2\objeto.gid\objeto.vv
    OGLStereo(EyeDistance) 0.075
    OGLStereo(LeftEyeDistance) 1 0 0 1
    OGLStereo(RightEyeDistance) 0 1 1 1
-EndZE C:\Users\Laptop\Source\Repos\Parcial_2\objeto.gid\objeto.vv
+EndZE /home/rafa/src/Parcial_2/objeto.gid/objeto.vv
 
 BeginMirror
    Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
