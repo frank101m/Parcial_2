@@ -1,0 +1,37 @@
+BeginZE C:\Users\Laptop\Source\Repos\Parcial_2\objeto.gid\objeto.vv
+   x -7.895378589630127 12.766457557678223
+   y 8.1892795562744141 -1.5973110198974609
+   z -10.620500564575195 4.9538345336914062
+   e 3.2015621662139893
+   v -0.54855008677864436 -0.098467454052191275 -0.25160019749321644
+   r -0.7912612106055722
+   m 0.85400301218032837 -0.29013428092002869 0.43185758590698242 0 0.50619161128997803 0.2715802788734436 -0.81854397058486938 0 0.12020366638898849 0.91764169931411743 0.37879392504692078 0 0 0 0 1
+   c 3 2 2.8333332538604736
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 1
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Laptop\Source\Repos\Parcial_2\objeto.gid\objeto.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

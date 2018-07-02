@@ -1,0 +1,1 @@
+El tamaño de los elementos para generar la mesh es 0.43. No estructurada.
